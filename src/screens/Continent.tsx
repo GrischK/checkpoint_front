@@ -2,9 +2,14 @@ import React from 'react';
 import {gql, useQuery} from '@apollo/client';
 import {useParams} from "react-router-dom";
 
+interface Country {
+    name: string;
+}
+
 interface Continent {
     name: string;
     code: string;
+    countries: Country[];
 }
 
 interface ContinentData {
@@ -17,6 +22,7 @@ query GetContinent($ID: ID!) {
     continent(code: $ID) {
         name
         code
+        countries{name}
     }
 }
 `;
@@ -39,6 +45,11 @@ function Continent() {
     return (
         <div className="main_container">
             <h1>{continent?.continent.name}</h1>
+            <ul>
+                {continent?.continent.countries.map((country:Country)=>(
+                    <li>{country.name}</li>
+                ))}
+            </ul>
         </div>
     );
 }
