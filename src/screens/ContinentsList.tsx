@@ -1,5 +1,6 @@
 import React from 'react';
 import {gql, useQuery} from '@apollo/client';
+import {NavLink} from "react-router-dom";
 
 interface Continent {
     name: string;
@@ -31,13 +32,19 @@ function ContinentsList() {
     console.log(data)
 
     return (
-        <div className="App">
-            {continents.map((continent: Continent, index:number) => (
-                <li key={index}>
-                    <span>{continent.name}</span>
-                    <span>{continent.code}</span>
-                </li>
-            ))}
+        <div className="main_container">
+            <h1>Liste des continents</h1>
+            <div className="continents_list">
+                {continents.map((continent: Continent, index: number) => (
+
+                    <NavLink className='cardLink' key={index} to={`/${continent.name}/${continent.code}`}>
+                        <li>
+                            <span>{continent.name}</span>
+                            <span>{continent.code}</span>
+                        </li>
+                    </NavLink>)
+                )}
+            </div>
         </div>
     );
 }

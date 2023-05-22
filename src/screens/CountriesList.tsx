@@ -30,10 +30,13 @@ function CountriesList() {
     console.log(data)
 
     return (
-        <div className="App">
-            {countries.map((country: Country, index:number) => (
-                <li key={index}>{country.name}</li>
-            ))}
+        <div className="main_container">
+            <h1>Liste des pays</h1>
+            <div className="countries_list">
+                {countries.map((country: Country, index:number) => (
+                    <li key={index}>{country.name}</li>
+                ))}
+            </div>
         </div>
     );
 }
