@@ -6,6 +6,7 @@ import CountriesList from "./screens/CountriesList";
 import ContinentsList from "./screens/ContinentsList";
 import NavBar from "./components/NavBar";
 import Continent from "./screens/Continent";
+import Country from "./screens/Country";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/continents" element={<ContinentsList/>}/>
                 <Route path="/countries" element={<CountriesList/>}/>
                 <Route path="/:continentName/:continentCode" element={<Continent/>}/>
+                <Route path="/country/:countryCode" element={<Country/>}/>
             </Routes>
         </>
 

@@ -1,8 +1,10 @@
 import React from 'react';
 import {gql, useQuery} from '@apollo/client';
+import {NavLink} from "react-router-dom";
 
 interface Country {
     name: string;
+    code: string;
 }
 
 interface CountriesData {
@@ -14,6 +16,7 @@ const LIST_COUNTRIES = gql`
 query GetCountries {
   countries {
     name
+    code
   }
 }
 `;
@@ -34,7 +37,9 @@ function CountriesList() {
             <h1>Liste des pays</h1>
             <div className="countries_list">
                 {countries.map((country: Country, index:number) => (
-                    <li key={index}>{country.name}</li>
+                    <NavLink to={`/country/${country.code}`} key={index}>
+                        <li>{country.name}</li>
+                    </NavLink>
                 ))}
             </div>
         </div>

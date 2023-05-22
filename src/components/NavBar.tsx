@@ -8,6 +8,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import {NavLink} from "react-router-dom";
+import PublicIcon from '@mui/icons-material/Public';
 
 
 export default function NavBar() {
@@ -29,11 +30,11 @@ export default function NavBar() {
                     component="div"
                     sx={{flexGrow: 1, display: {xs: 'none', sm: 'block'}}}
                 >
-                    MUI
+                    <PublicIcon/>
                 </Typography>
                 <Box sx={{display: {xs: 'none', sm: 'block'}}}>
-                    {navItems.map((item: any) => (
-                        <NavLink to={item}>
+                    {navItems.map((item: any, index:number) => (
+                        <NavLink to={item} key={index}>
                             <Button key={item} sx={{color: '#fff'}}>
                                 {item}
                             </Button>

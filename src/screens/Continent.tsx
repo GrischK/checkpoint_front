@@ -1,9 +1,10 @@
 import React from 'react';
 import {gql, useQuery} from '@apollo/client';
-import {useParams} from "react-router-dom";
+import {Link, NavLink, useParams} from "react-router-dom";
 
 interface Country {
     name: string;
+    code : string;
 }
 
 interface Continent {
@@ -22,7 +23,10 @@ query GetContinent($ID: ID!) {
     continent(code: $ID) {
         name
         code
-        countries{name}
+        countries {
+            name 
+            code
+            }
     }
 }
 `;
@@ -40,14 +44,16 @@ function Continent() {
 
     const continent = data ;
 
-    console.log(continent?.continent.name)
+    console.log("continent"+continent?.continent)
 
     return (
         <div className="main_container">
             <h1>{continent?.continent.name}</h1>
             <ul>
                 {continent?.continent.countries.map((country:Country)=>(
-                    <li>{country.name}</li>
+                    <Link to={`/${country.name}/${country.code}`}>
+                        <li>{country.name}</li>
+                    </Link>
                 ))}
             </ul>
         </div>
