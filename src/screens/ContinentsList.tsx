@@ -3,6 +3,7 @@ import {gql, useQuery} from '@apollo/client';
 
 interface Continent {
     name: string;
+    code: string;
 }
 
 interface ContinentsData {
@@ -14,6 +15,7 @@ const LIST_CONTINENTS = gql`
 query GetContinents {
   continents {
     name
+    code
   }
 }
 `;
@@ -31,7 +33,10 @@ function ContinentsList() {
     return (
         <div className="App">
             {continents.map((continent: Continent, index:number) => (
-                <li key={index}>{continent.name}</li>
+                <li key={index}>
+                    <span>{continent.name}</span>
+                    <span>{continent.code}</span>
+                </li>
             ))}
         </div>
     );
