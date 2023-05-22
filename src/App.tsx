@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import CountrySelect from "./screens/CountriesList";
+import CountriesList from "./screens/CountriesList";
+import ContinentsList from "./screens/ContinentsList";
 
 function App() {
     return (
@@ -20,7 +21,8 @@ function App() {
                     Learn React
                 </a>
             </header>
-            <CountrySelect/>
+            {/*<CountriesList/>*/}
+            <ContinentsList/>
         </div>
     );
 }

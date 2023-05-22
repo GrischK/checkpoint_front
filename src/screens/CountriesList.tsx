@@ -3,7 +3,6 @@ import {gql, useQuery} from '@apollo/client';
 
 interface Country {
     name: string;
-    // Add more properties as needed (e.g., code)
 }
 
 interface CountriesData {
@@ -19,8 +18,8 @@ query GetCountries {
 }
 `;
 
-// create a component that renders a select input for coutries
-function CountrySelect() {
+// create a component that renders a select input for countries
+function CountriesList() {
     const {data, loading, error} = useQuery<CountriesData>(LIST_COUNTRIES);
 
     if (loading) return <p>Loading...</p>;
@@ -39,4 +38,4 @@ function CountrySelect() {
     );
 }
 
-export default CountrySelect;
+export default CountriesList;
