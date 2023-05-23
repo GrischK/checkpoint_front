@@ -5,6 +5,7 @@ import {useParams} from "react-router-dom";
 interface ICountry {
     name: string;
     code: string;
+    emoji: string
 }
 
 interface CountryData {
@@ -17,6 +18,7 @@ query GetCountry($ID: ID!) {
     country(code: $ID) {
     name
     code
+    emoji
     }
 }
 `;
@@ -25,7 +27,6 @@ function Country() {
     const {countryCode} = useParams();
 
     console.log("countrycode"+countryCode)
-
 
     const {data, loading, error} = useQuery<CountryData>(GET_COUNTRY, {
         variables: {ID: countryCode},

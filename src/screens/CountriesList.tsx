@@ -1,10 +1,12 @@
 import React from 'react';
 import {gql, useQuery} from '@apollo/client';
 import {NavLink} from "react-router-dom";
+import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
 
 interface Country {
     name: string;
     code: string;
+    emoji: string;
 }
 
 interface CountriesData {
@@ -17,12 +19,15 @@ query GetCountries {
   countries {
     name
     code
+    emoji
   }
 }
 `;
 
 // create a component that renders a select input for countries
 function CountriesList() {
+    polyfillCountryFlagEmojis();
+
     const {data, loading, error} = useQuery<CountriesData>(LIST_COUNTRIES);
 
     if (loading) return <p>Loading...</p>;
@@ -39,6 +44,7 @@ function CountriesList() {
                 {countries.map((country: Country, index:number) => (
                     <NavLink to={`/country/${country.code}`} key={index}>
                         <li>{country.name}</li>
+                        <span>{country?.emoji}</span>
                     </NavLink>
                 ))}
             </div>

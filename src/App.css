@@ -1,102 +1,118 @@
+body {
+    font-family: "Twemoji Country Flags", "Helvetica", "Comic Sans", serif;
+}
+
 html {
-  min-height: 100vh;
-  background: rgb(255,255,255);
-  background: linear-gradient(152deg, rgba(255,255,255,1) 0%, rgba(226,246,255,1) 66%, rgba(208,238,254,1) 100%);
+    min-height: 100vh;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(152deg, rgba(255, 255, 255, 1) 0%, rgba(226, 246, 255, 1) 66%, rgba(208, 238, 254, 1) 100%);
 }
 
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 .main_container {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 100px auto;
-  color: #1f3262;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px auto;
+    color: #1f3262;
 }
 
-.countries_list, .continents_list {
-  display: flex;
-  gap: 12px;
+.countries_list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.countries_list a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.continents_list {
+    display: flex;
+    gap: 12px;
 }
 
 .navBar a:visited {
-  color: white;
+    color: white;
 }
 
 .home {
-  overflow: hidden;
-  padding: 100px;
-  margin: 100px 0;
-  align-items: start;
+    overflow: hidden;
+    padding: 100px;
+    margin: 100px 0;
+    align-items: start;
 }
 
 .home_card {
-  min-width: 150px;
+    min-width: 150px;
 }
 
 .cards_container {
-  display: flex;
-  gap: 24px;
-  padding: 12px 36px;
+    display: flex;
+    gap: 24px;
+    padding: 12px 36px;
 }
 
 li {
-  list-style: none;
+    list-style: none;
 }
 
 a:visited, a {
-  color: currentColor;
+    color: currentColor;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .illustration {
-  position: absolute;
-  top: 200px;
-  right: 10%;
-  z-index: -1;
+    position: absolute;
+    top: 200px;
+    right: 10%;
+    z-index: -1;
 }
 
 .illustration img {
-  width: 500px;
+    width: 500px;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
