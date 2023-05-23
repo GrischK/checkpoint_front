@@ -1,7 +1,6 @@
 import React from 'react';
 import {gql, useQuery} from '@apollo/client';
-import {Link, NavLink, useParams} from "react-router-dom";
-import {polyfillCountryFlagEmojis} from "country-flag-emoji-polyfill";
+import {Link, useParams} from "react-router-dom";
 
 interface Country {
     name: string;

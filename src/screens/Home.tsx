@@ -1,4 +1,4 @@
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import {Link} from "react-router-dom";
 import World from "../assets/world.png"
