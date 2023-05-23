@@ -1,3 +1,9 @@
+html {
+  min-height: 100vh;
+  background: rgb(255,255,255);
+  background: linear-gradient(152deg, rgba(255,255,255,1) 0%, rgba(226,246,255,1) 66%, rgba(208,238,254,1) 100%);
+}
+
 .App {
   text-align: center;
 }
@@ -34,10 +40,55 @@
   flex-direction: column;
   align-items: center;
   margin: 100px auto;
+  color: #1f3262;
 }
 
 .countries_list, .continents_list {
   align-items: start;
+}
+
+.navBar a:visited {
+  color: white;
+}
+
+.home {
+  overflow: hidden;
+  padding: 100px;
+  margin: 100px 0;
+  align-items: start;
+}
+
+.home_card {
+  min-width: 150px;
+}
+
+.cards_container {
+  display: flex;
+  gap: 24px;
+  padding: 12px 36px;
+}
+
+li {
+  list-style: none;
+}
+
+a:visited, a {
+  color: currentColor;
+}
+
+a {
+  text-decoration: none;
+}
+
+.illustration {
+  position: absolute;
+  top: 200px;
+  right: 10%;
+  z-index: -1;
+}
+
+.illustration img {
+  width: 500px;
 }
 
 @keyframes App-logo-spin {

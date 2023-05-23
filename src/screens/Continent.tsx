@@ -51,7 +51,7 @@ function Continent() {
             <h1>{continent?.continent.name}</h1>
             <ul>
                 {continent?.continent.countries.map((country:Country)=>(
-                    <Link to={`/${country.name}/${country.code}`}>
+                    <Link to={`/country/${country.code}`}>
                         <li>{country.name}</li>
                     </Link>
                 ))}

@@ -16,7 +16,7 @@ function App() {
                 <Route path="/" element={<Home/>}/>
                 <Route path="/continents" element={<ContinentsList/>}/>
                 <Route path="/countries" element={<CountriesList/>}/>
-                <Route path="/:continentName/:continentCode" element={<Continent/>}/>
+                <Route path="/continent/:continentCode" element={<Continent/>}/>
                 <Route path="/country/:countryCode" element={<Country/>}/>
             </Routes>
         </>

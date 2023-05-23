@@ -37,7 +37,7 @@ function ContinentsList() {
             <div className="continents_list">
                 {continents.map((continent: Continent, index: number) => (
 
-                    <NavLink key={index} to={`/${continent.name}/${continent.code}`}>
+                    <NavLink key={index} to={`/continent/${continent.code}`}>
                         <li>
                             <span>{continent.name}</span>
                         </li>

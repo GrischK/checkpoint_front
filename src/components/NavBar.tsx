@@ -15,7 +15,7 @@ export default function NavBar() {
     const navItems = ['Continents', 'Countries'];
 
     return (
-        <AppBar component="nav">
+        <AppBar component="nav" className="navBar">
             <Toolbar>
                 <IconButton
                     color="inherit"
@@ -29,11 +29,12 @@ export default function NavBar() {
                     variant="h6"
                     component="div"
                     sx={{flexGrow: 1, display: {xs: 'none', sm: 'block'}}}
-                >
+                > <NavLink to={"/"}>
                     <PublicIcon/>
+                </NavLink>
                 </Typography>
                 <Box sx={{display: {xs: 'none', sm: 'block'}}}>
-                    {navItems.map((item: any, index:number) => (
+                    {navItems.map((item: any, index: number) => (
                         <NavLink to={item} key={index}>
                             <Button key={item} sx={{color: '#fff'}}>
                                 {item}
