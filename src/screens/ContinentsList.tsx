@@ -1,6 +1,7 @@
 import React from 'react';
 import {gql, useQuery} from '@apollo/client';
 import {NavLink} from "react-router-dom";
+import {Chip} from "@mui/material";
 
 interface Continent {
     name: string;
@@ -38,9 +39,13 @@ function ContinentsList() {
                 {continents.map((continent: Continent, index: number) => (
 
                     <NavLink key={index} to={`/continent/${continent.code}`}>
-                        <li>
-                            <span>{continent.name}</span>
-                        </li>
+                        <Chip
+                            label={continent.name}
+                            component="a"
+                            href="#basic-chip"
+                            clickable
+                            color="primary"
+                        />
                     </NavLink>)
                 )}
             </div>

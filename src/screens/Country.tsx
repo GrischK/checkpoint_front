@@ -26,6 +26,7 @@ function Country() {
 
     console.log("countrycode"+countryCode)
 
+
     const {data, loading, error} = useQuery<CountryData>(GET_COUNTRY, {
         variables: {ID: countryCode},
     });
