@@ -42,7 +42,7 @@ function CountriesList() {
             <h1>Liste des pays</h1>
             <div className="countries_list">
                 {countries.map((country: Country, index:number) => (
-                    <NavLink to={`/country/${country.code}`} key={index}>
+                    <NavLink to={`/country/${country.code}`} key={index} className="country_link">
                         <li>{country.name}</li>
                         <span>{country?.emoji}</span>
                     </NavLink>

@@ -48,8 +48,9 @@ html {
 }
 
 .countries_list {
+    flex-wrap: wrap;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     gap: 12px;
 }
 
@@ -57,6 +58,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-grow: 1;
 }
 
 .continents_list {
@@ -93,6 +95,10 @@ a:visited, a {
     color: currentColor;
 }
 
+.countries_list a:visited {
+    color: white;
+}
+
 a {
     text-decoration: none;
 }
@@ -106,6 +112,17 @@ a {
 
 .illustration img {
     width: 500px;
+}
+
+.country_link {
+    border-radius: 40px;
+    position: relative;
+    max-width: 100px;
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #1976d2;
+    padding: 10px;
 }
 
 @keyframes App-logo-spin {
