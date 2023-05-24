@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {gql, useQuery} from '@apollo/client';
 import {NavLink} from "react-router-dom";
-import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
+import {polyfillCountryFlagEmojis} from "country-flag-emoji-polyfill";
+import {TextField} from "@mui/material";
 
 interface Country {
     name: string;
@@ -27,6 +28,12 @@ query GetCountries {
 // create a component that renders a select input for countries
 function CountriesList() {
     polyfillCountryFlagEmojis();
+    const [searchedCountry, setSearchedCountry] = useState('');
+
+    const handleChange = (event:any) => {
+        setSearchedCountry(event.target.value);
+    };
+
 
     const {data, loading, error} = useQuery<CountriesData>(LIST_COUNTRIES);
 
@@ -35,13 +42,19 @@ function CountriesList() {
 
     const countries = data?.countries ?? [];
 
-    console.log(data)
+    const filteredCountries = countries.filter((country) =>
+        country.name.toLowerCase().includes(searchedCountry.toLowerCase())
+    );
+
+    // console.log(data)
 
     return (
         <div className="main_container">
-            <h1>Liste des pays</h1>
+            <h1>Countries list</h1>
+            <TextField id="outlined-basic" label="Search a country" variant="outlined" onChange={handleChange}
+            />
             <div className="countries_list">
-                {countries.map((country: Country, index:number) => (
+                {filteredCountries.map((country: Country, index: number) => (
                     <NavLink to={`/country/${country.code}`} key={index} className="country_link">
                         <li>{country.name}</li>
                         <span>{country?.emoji}</span>

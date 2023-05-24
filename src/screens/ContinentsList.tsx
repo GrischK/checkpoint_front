@@ -34,7 +34,7 @@ function ContinentsList() {
 
     return (
         <div className="main_container">
-            <h1>Liste des continents</h1>
+            <h1>Continents list</h1>
             <div className="continents_list">
                 {continents.map((continent: Continent, index: number) => (
 
