@@ -3,6 +3,8 @@ import {gql, useQuery} from '@apollo/client';
 import {NavLink} from "react-router-dom";
 import {polyfillCountryFlagEmojis} from "country-flag-emoji-polyfill";
 import {TextField} from "@mui/material";
+import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
+import { styled } from '@mui/material/styles';
 
 interface Country {
     name: string;
@@ -30,7 +32,7 @@ function CountriesList() {
     polyfillCountryFlagEmojis();
     const [searchedCountry, setSearchedCountry] = useState('');
 
-    const handleChange = (event:ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setSearchedCountry(event.target.value);
     };
 
@@ -46,8 +48,16 @@ function CountriesList() {
         country.name.toLowerCase().includes(searchedCountry.toLowerCase())
     );
 
-    // console.log(data)
-
+    const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
+        <Tooltip {...props} classes={{ popper: className }} />
+    ))(({ theme }) => ({
+        [`& .${tooltipClasses.tooltip}`]: {
+            backgroundColor: theme.palette.common.white,
+            color: 'rgba(0, 0, 0, 0.87)',
+            boxShadow: theme.shadows[1],
+            fontSize: 11,
+        },
+    }));
     return (
         <div className="main_container">
             <h1>Countries list</h1>
@@ -55,10 +65,12 @@ function CountriesList() {
             />
             <div className="countries_list">
                 {filteredCountries.map((country: Country, index: number) => (
-                    <NavLink to={`/country/${country.code}`} key={index} className="country_link">
-                        <li>{country.name}</li>
-                        <span>{country?.emoji}</span>
-                    </NavLink>
+                    <LightTooltip title={country.name} placement="top">
+                        <NavLink to={`/country/${country.code}`} key={index} className="country_link">
+                            <li>{country.name}</li>
+                            <span>{country?.emoji}</span>
+                        </NavLink>
+                    </LightTooltip>
                 ))}
             </div>
         </div>

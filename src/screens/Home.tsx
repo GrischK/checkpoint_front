@@ -2,7 +2,9 @@ import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import {Link} from "react-router-dom";
 import World from "../assets/world.png"
-
+import {Chip} from "@mui/material";
+import PublicIcon from '@mui/icons-material/Public';
+import FlagIcon from '@mui/icons-material/Flag';
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -25,14 +27,10 @@ function Home() {
             </div>
             <div className="cards_container">
                 <Link to={"/continents"} className="home_card">
-                    <Item elevation={24}>
-                        Continents
-                    </Item>
+                    <Chip icon={<PublicIcon />} label="Continents" color="primary" clickable/>
                 </Link>
                 <Link to={"/countries"} className="home_card">
-                    <Item elevation={24}>
-                        Contries
-                    </Item>
+                    <Chip icon={<FlagIcon />} label="Countries" color="primary" clickable/>
                 </Link>
             </div>
         </div>

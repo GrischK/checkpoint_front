@@ -51,15 +51,8 @@ html {
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 24px;
     margin-top: 48px;
-}
-
-.countries_list a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
 }
 
 .continents_list {
@@ -124,6 +117,16 @@ a {
     color: #fff;
     background-color: #1976d2;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.country_link li {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
 }
 
 @keyframes App-logo-spin {
