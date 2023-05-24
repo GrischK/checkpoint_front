@@ -50,8 +50,8 @@ function Continent() {
         <div className="main_container">
             <h1>{continent?.continent.name}</h1>
             <ul>
-                {continent?.continent.countries.map((country:Country)=>(
-                    <Link to={`/country/${country.code}`}>
+                {continent?.continent.countries.map((country:Country, index:number)=>(
+                    <Link key={index} to={`/country/${country.code}`}>
                         <li>{country.name}</li>
                     </Link>
                 ))}

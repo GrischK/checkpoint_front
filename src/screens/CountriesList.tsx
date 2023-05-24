@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import {gql, useQuery} from '@apollo/client';
 import {NavLink} from "react-router-dom";
 import {polyfillCountryFlagEmojis} from "country-flag-emoji-polyfill";
@@ -30,7 +30,7 @@ function CountriesList() {
     polyfillCountryFlagEmojis();
     const [searchedCountry, setSearchedCountry] = useState('');
 
-    const handleChange = (event:any) => {
+    const handleChange = (event:ChangeEvent<HTMLInputElement>) => {
         setSearchedCountry(event.target.value);
     };
 
