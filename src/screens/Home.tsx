@@ -1,19 +1,8 @@
-import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
 import {Link} from "react-router-dom";
-import World from "../assets/world.png"
+import World from "../assets/flame-searching.gif"
 import {Chip} from "@mui/material";
 import PublicIcon from '@mui/icons-material/Public';
 import FlagIcon from '@mui/icons-material/Flag';
-
-const Item = styled(Paper)(({ theme }) => ({
-    ...theme.typography.body2,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-    height: 60,
-    lineHeight: '60px',
-    padding: 20,
-}));
 
 function Home() {
     return (
@@ -23,7 +12,7 @@ function Home() {
                 <h2>Discover continents and countries with all details.</h2>
             </div>
             <div className="illustration">
-                <img src={World} alt="earth with children"/>
+                <img className="world" src={World} alt="earth"/>
             </div>
             <div className="cards_container">
                 <Link to={"/continents"} className="home_card">

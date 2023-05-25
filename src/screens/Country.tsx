@@ -42,6 +42,7 @@ function Country() {
     return (
         <div className="main_container">
             <h1>{country?.country.name}</h1>
+            <h2>{country?.country.code}</h2>
         </div>
     );
 }

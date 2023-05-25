@@ -2,7 +2,7 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
-
+import RedHead from "../assets/flame-success.gif"
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -30,7 +30,7 @@ export default function NavBar() {
                     component="div"
                     sx={{flexGrow: 1, display: {xs: 'none', sm: 'block'}}}
                 > <NavLink to={"/"}>
-                    <PublicIcon/>
+                    <img src={RedHead} alt="brain"/>
                 </NavLink>
                 </Typography>
                 <Box sx={{display: {xs: 'none', sm: 'block'}}}>
